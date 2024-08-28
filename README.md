@@ -12,7 +12,10 @@ Here is what I have done / what I intend to do:
 - [ ] UNSW Computer Vision
 - [ ] Stanford CS229 (Machine Learning)
 - [ ] Stanford CS230 (Deep Learning)
-- [ ] Mathematics for Machine Learning
+- [ ] Mathematics for Machine Learning, Ong et al.
 - [ ] HOML (Hands on Machine Learning)
+- [ ] All of Statistics, Larry Wasserman
+- [ ] Coursera Machine Learning Specialisation
+- [ ] Coursera Deep Learning Specialisation
 
 
