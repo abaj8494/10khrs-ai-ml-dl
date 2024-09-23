@@ -18,4 +18,9 @@ Here is what I have done / what I intend to do:
 - [ ] Coursera Machine Learning Specialisation
 - [ ] Coursera Deep Learning Specialisation
 
+> "Read 2 papers a week" - Andrew Ng
 
+| Paper | Read | Implemented |
+| ------------- | ------------- |------------- |
+| AlexNet | 18/09/24| No |
+| Attention is all you need | 23/09/24| No |
