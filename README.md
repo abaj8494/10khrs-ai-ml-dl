@@ -15,12 +15,14 @@ Here is what I have done / what I intend to do:
 - [ ] Mathematics for Machine Learning, Ong et al.
 - [ ] HOML (Hands on Machine Learning)
 - [ ] All of Statistics, Larry Wasserman
-- [ ] Coursera Machine Learning Specialisation
-- [ ] Coursera Deep Learning Specialisation
+- [X] Coursera Machine Learning Specialisation
+- [X] Coursera Deep Learning Specialisation
 
 > "Read 2 papers a week" - Andrew Ng
 
-| Paper | Read | Implemented |
+| Paper | Read | Understood | Implemented | Link |
 | ------------- | ------------- |------------- |
-| AlexNet | 18/09/24| No |
-| Attention is all you need | 23/09/24| No |
+| AlexNet | 18/09/24| In progress | No | alexnet.pdf |
+| Deep Learning Review  | 29/09/24 | Yes | N/A | lecun-bengio-hinto-review.pdf |
+| Sequence to Sequence Learning with NN | 30/09/24 | Yes | Yes | No | en-fr-rnn.pdf |
+| Attention is all you need | No | No | No | attention.pdf |
