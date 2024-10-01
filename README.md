@@ -1,5 +1,7 @@
 # 10,000 Hours of Machine Learning.
 
+> "Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
+
 > "S/he who has a why, can bear almost any how." - Friedrich Nietzche
 
 I've fallen in love with machine learning.
