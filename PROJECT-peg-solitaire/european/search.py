@@ -1,4 +1,5 @@
 from collections import deque
+from copy import deepcopy
 
 EMPTY = -1
 PEG = 1
@@ -6,9 +7,9 @@ VOID = 0
 N = 7
 
 class PegSolitaire:
-    def __init__(self, board):
+    def __init__(self, board, moves):
         self.board = board
-        self.moves = []
+        self.moves = moves
 
     def is_solved(self):
         pegs = 0
@@ -24,6 +25,7 @@ class PegSolitaire:
         if (pegs == 1):
             return True
 
+
     def get_valid_moves(self):
         valids = []
         for i, row in enumerate(board):
@@ -31,14 +33,14 @@ class PegSolitaire:
                 if (board[i][col] > 0):
                     if (i > 1 and board[i-2][col] < 0 and board[i-1][col] > 0):
                         valids.append([i,col,"w",board[i-1][col]])
-                    elif (col > 1 and board[i][col-2] < 0 and board[i][col-1] > 0): 
+                    if (col > 1 and board[i][col-2] < 0 and board[i][col-1] > 0): 
                         valids.append([i,col,"a",board[i][col-1]])
-                    elif (i < N-2 and board[i+2][col] < 0 and board[i+1][col] > 0):
+                    if (i < N-2 and board[i+2][col] < 0 and board[i+1][col] > 0):
                         valids.append([i,col,"s",board[i+1][col]])
-                    elif (col < N-2 and board[i][col+2] < 0 and board[i][col+1] > 0):
+                    if (col < N-2 and board[i][col+2] < 0 and board[i][col+1] > 0):
                         valids.append([i,col,"d",board[i][col+1]])
-        print("VALID MOVES:", valids)
-        print("MOVES thus far:", self.moves)
+        #print("VALID MOVES:", valids)
+        #print("MOVES thus far:", self.moves)
         return valids
 
     def make_move(self, move):
@@ -98,31 +100,34 @@ class PegSolitaire:
         return False
 
     def bfs(self):
-        queue = deque([(self.board, [])])
+        queue = deque()
+        dc = deepcopy(self)
+        queue.append(dc)
         visited = set()
-        visited.add(str(self.board))
+        visited.add(str(dc))
 
         while queue:
-            self.print_board()
-            board_state, moves = queue.popleft()
+            #self.print_board()
+            curr_board = queue.popleft()
+            #self.print_board()
+            #self.print_moves()
             
 
-            if self.is_solved():
+            if curr_board.is_solved():
                 print('im solved')
-                self.moves = moves
-                return moves 
-            for move in self.get_valid_moves():
-                self.make_move(move)
-                new_board = self.board
+                self.moves = curr_board.moves
+                return self.moves 
+            for move in curr_board.get_valid_moves():
+                neighbour_board = deepcopy(curr_board)
+                neighbour_board.make_move(move)
 
-                board_str = str(new_board)
+                board_str = str(neighbour_board)
                 if board_str not in visited:
                     visited.add(board_str)
-                    queue.append((new_board, moves + [move]))
-
-                self.undo_move()
+                    queue.append(neighbour_board)
 
         print('hello')
+        self.print_board()
         return None 
 
     def print_moves(self):
@@ -148,7 +153,7 @@ if __name__ == "__main__":
              [22, 23, 24, 25, 26, 27, 28],
              [ 0, 29, 30, 31, 32, 33,  0],
              [ 0,  0, 34, 35, -1,  0,  0]]
-    game = PegSolitaire(board)
+    game = PegSolitaire(board, [])
     game.bfs()
     game.print_moves()
 
