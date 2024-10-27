@@ -1,3 +1,5 @@
+from collections import deque
+
 EMPTY = -1
 PEG = 1
 VOID = 0
@@ -18,8 +20,8 @@ class PegSolitaire:
                     pegs+= 1
             if (pegs > 1):
                 return False
-        if (pegs == 1):
         #if (pegs == 1 and position == [[3,3]]):
+        if (pegs == 1):
             return True
 
     def get_valid_moves(self):
@@ -83,16 +85,45 @@ class PegSolitaire:
                 board[move[0]][move[1]-2] = board[move[0]][move[1]] 
                 board[move[0]][move[1]] = -1
                 board[move[0]][move[1]-1] = move[3]
-    def solve(self):
+
+    def dfs(self):
         if self.is_solved():
             return True
         for move in self.get_valid_moves():
             self.print_board()
             self.make_move(move)
-            if self.solve():
+            if self.dfs():
                 return True
             self.undo_move()
         return False
+
+    def bfs(self):
+        queue = deque([(self.board, [])])
+        visited = set()
+        visited.add(str(self.board))
+
+        while queue:
+            self.print_board()
+            board_state, moves = queue.popleft()
+            
+
+            if self.is_solved():
+                print('im solved')
+                self.moves = moves
+                return moves 
+            for move in self.get_valid_moves():
+                self.make_move(move)
+                new_board = self.board
+
+                board_str = str(new_board)
+                if board_str not in visited:
+                    visited.add(board_str)
+                    queue.append((new_board, moves + [move]))
+
+                self.undo_move()
+
+        print('hello')
+        return None 
 
     def print_moves(self):
         print(self.moves)
@@ -118,6 +149,6 @@ if __name__ == "__main__":
              [ 0, 29, 30, 31, 32, 33,  0],
              [ 0,  0, 34, 35, -1,  0,  0]]
     game = PegSolitaire(board)
-    game.solve()
+    game.bfs()
     game.print_moves()
 
