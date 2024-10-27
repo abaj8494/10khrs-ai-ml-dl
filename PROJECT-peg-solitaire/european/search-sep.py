@@ -101,42 +101,6 @@ class PegSolitaire:
             self.undo_move()
         return False
 
-    def bfs(self):
-        lvl = 0
-        idx = 0
-        queue = deque()
-        queue.append(self)
-        visited = set()
-        visited.add(str(self.board))
-
-        while queue:
-            print("the queue has these objects: {}".format(queue))
-            print("here are the boards")
-            for i in queue:
-                i.print_board()
-                print(i.board)
-            lvl += 1
-            curr_board = queue.popleft()
-
-            if curr_board.is_solved():
-                print('im solved')
-                self.moves = curr_board.moves
-                return self.moves 
-
-            for move in curr_board.get_valid_moves():
-                curr_board.make_move(move)
-                board_str = str(curr_board.board)
-                if board_str not in visited:
-                    visited.add(board_str)
-                    print("added")
-                    new_board = PegSolitaire(deepcopy(curr_board.board), deepcopy(curr_board.moves), lvl, idx)
-                    print("NEWBOARD")
-                    new_board.print_board()
-                    queue.append(new_board)
-                    idx += 1
-                curr_board.undo_move()
-
-        return None 
 
     def print_moves(self):
         print(self.moves)
@@ -156,6 +120,50 @@ class PegSolitaire:
                     print('O', end='')
             print('\n')
 
+# not class method
+def bfs(root):
+    lvl = 0
+    idx = 0
+    queue = deque([PegSolitaire(deepcopy(root.board), deepcopy(root.moves), lvl, idx)])
+    visited = set()
+    visited.add(str(deepcopy(root.board)))
+
+    while queue:
+        print("Queue len")
+        print(len(queue))
+        print("just popped board curr_board")
+        lvl += 1
+        curr_board = queue.popleft()
+
+        if curr_board.is_solved():
+            print('im solved')
+            root.moves = curr_board.moves
+            return root.moves 
+
+        for move in curr_board.get_valid_moves():
+            print("SELF")
+            root.print_board()
+            curr_board.print_board()
+            curr_board.print_loc()
+            curr_board.print_moves()
+            print("the possible moves are {}".format(curr_board.get_valid_moves()))
+            neighbour_board = PegSolitaire(deepcopy(curr_board.board), deepcopy(curr_board.moves), lvl, idx)
+            idx += 1
+            print("with move {}".format(move))
+            neighbour_board.make_move(move)
+            print("Here is the board being addded:")
+            neighbour_board.print_board()
+            neighbour_board.print_moves()
+            neighbour_board.print_loc()
+
+            board_str = str(neighbour_board.board)
+            if board_str not in visited:
+                visited.add(board_str)
+                queue.append(deepcopy(neighbour_board))
+
+            #self.undo_move()
+    return None 
+
 if __name__ == "__main__":
     board = [[ 0,  0,  1,  2,  3,  0,  0],
              [ 0,  4,  5,  6,  7,  8,  0],
@@ -165,6 +173,6 @@ if __name__ == "__main__":
              [ 0, 29, 30, 31, 32, 33,  0],
              [ 0,  0, 34, 35, -1,  0,  0]]
     game = PegSolitaire(board, [], 0, 0)
-    game.bfs()
+    bfs(game)
     game.print_moves()
 
