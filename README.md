@@ -1,15 +1,15 @@
 
 # Table of Contents
 
-1.  [10,000 Hours of Machine Learning.](#org3456a40)
-2.  [Structure of the Repository](#org04e5aad)
-3.  [PORTFOLIO](#org993feaa)
-    1.  [Projects](#org8d7591f)
-4.  [Education](#orge90d880)
-5.  [PROFICIENCY](#orgd55ed1a)
+1.  [10,000 Hours of Machine Learning.](#org10b7dd7)
+2.  [Structure of the Repository](#orgdfa57d2)
+3.  [PORTFOLIO](#org82dd460)
+    1.  [Projects](#orge6f96a8)
+4.  [Education](#org8c68a86)
+5.  [PROFICIENCY](#orgbbed657)
 
 
-<a id="org3456a40"></a>
+<a id="org10b7dd7"></a>
 
 # 10,000 Hours of Machine Learning.
 
@@ -30,7 +30,7 @@ To become an expert at anything, there is a common denominator:
 </div>
 
 
-<a id="org04e5aad"></a>
+<a id="orgdfa57d2"></a>
 
 # Structure of the Repository
 
@@ -44,7 +44,7 @@ There are 3 main features:
     -   These are my more complex and non-trivial projects. They are more fun, but also more novel and thus less deterministic; Kanye West chatbot, Peg Solitare Reinforcement Learner, Ultimate Frisbee Computer Vision, etc.
 
 
-<a id="org993feaa"></a>
+<a id="org82dd460"></a>
 
 # PORTFOLIO
 
@@ -71,7 +71,7 @@ In no particular order, here are a list of the methods you will find in the note
 -   LLM
 
 
-<a id="org8d7591f"></a>
+<a id="orge6f96a8"></a>
 
 ## Projects
 
@@ -196,7 +196,7 @@ To gain proficiency in all of the above methods, I have solved classical problem
 </table>
 
 
-<a id="orge90d880"></a>
+<a id="org8c68a86"></a>
 
 # Education
 
@@ -207,17 +207,17 @@ I have done both, and overall benefitted as a result.
 -   [X] UNSW AI
 -   [X] UNSW Machine Learning and Data Mining
 -   [X] UNSW Deep Learning and Neural Networks
--   [-] UNSW Computer Vision
--   [-] Stanford CS229 (Machine Learning)
--   [-] Stanford CS230 (Deep Learning)
--   [-] Mathematics for Machine Learning, Ong et al.
--   [-] HOML (Hands on Machine Learning)
--   [-] All of Statistics, Larry Wasserman
+-   [ ] UNSW Computer Vision
+-   [ ] Stanford CS229 (Machine Learning)
+-   [ ] Stanford CS230 (Deep Learning)
+-   [ ] Mathematics for Machine Learning, Ong et al.
+-   [ ] HOML (Hands on Machine Learning)
+-   [ ] All of Statistics, Larry Wasserman
 -   [X] Coursera Machine Learning Specialisation
 -   [X] Coursera Deep Learning Specialisation
 
 
-<a id="orgd55ed1a"></a>
+<a id="orgbbed657"></a>
 
 # PROFICIENCY
 
