@@ -1,16 +1,14 @@
 * 10,000 Hours of Machine Learning.
 
 #+BEGIN_QUOTE
-> "Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
+"Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
 #+END_QUOTE
 
 #+BEGIN_QUOTE
-> "S/he who has a why, can bear almost any how." - Friedrich Nietzche
+"S/he who has a why, can bear almost any how." - Friedrich Nietzche
 #+END_QUOTE
 
-#+BEGIN_QUOTE
-Why do anything else, when the thing that you could do would help with everything else?
-#+END_QUOTE
+/Why do anything else, when the thing that you could do would help with everything else?/
 -----
 
 To become an expert at anything, there is a common denominator:
@@ -88,23 +86,6 @@ I have done both, and overall benefitted as a result.
 - [X] Coursera Machine Learning Specialisation
 - [X] Coursera Deep Learning Specialisation
 
-#+HTML: Literal HTML code for export
-#+BEGIN_EXPORT html
-<ul>
-  <li><input type="checkbox" checked disabled> UNSW AI</li>
-  <li><input type="checkbox" checked disabled> UNSW Machine Learning and Data Mining</li>
-  <li><input type="checkbox" checked disabled> UNSW Deep Learning and Neural Networks</li>
-  <li><input type="checkbox" disabled> UNSW Computer Vision</li>
-  <li><input type="checkbox" disabled> Stanford CS229 (Machine Learning)</li>
-  <li><input type="checkbox" disabled> Stanford CS230 (Deep Learning)</li>
-  <li><input type="checkbox" disabled> Mathematics for Machine Learning, Ong et al.</li>
-  <li><input type="checkbox" disabled> HOML (Hands on Machine Learning)</li>
-  <li><input type="checkbox" disabled> All of Statistics, Larry Wasserman</li>
-  <li><input type="checkbox" checked disabled> Coursera Machine Learning Specialisation</li>
-  <li><input type="checkbox" checked disabled> Coursera Deep Learning Specialisation</li>
-</ul>
-#+END_EXPORT
-
 * PROFICIENCY
 
 To become proficient, I have applied my ML skills to solve problems of personal and social interest.
@@ -117,6 +98,6 @@ To become proficient, I have applied my ML skills to solve problems of personal 
 
 
 #+BEGIN_QUOTE
-> "Read 2 papers a week" - Andrew Ng
+"Read 2 papers a week" - Andrew Ng
 #+END_QUOTE
 

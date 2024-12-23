@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+<!-- 2024-12-24 Tue 10:41 -->
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>&lrm;</title>
+<meta name="author" content="Aayush Bajaj" />
+<meta name="generator" content="Org Mode" />
+<style>
+  #content { max-width: 60em; margin: auto; }
+  .title  { text-align: center;
+             margin-bottom: .2em; }
+  .subtitle { text-align: center;
+              font-size: medium;
+              font-weight: bold;
+              margin-top:0; }
+  .todo   { font-family: monospace; color: red; }
+  .done   { font-family: monospace; color: green; }
+  .priority { font-family: monospace; color: orange; }
+  .tag    { background-color: #eee; font-family: monospace;
+            padding: 2px; font-size: 80%; font-weight: normal; }
+  .timestamp { color: #bebebe; }
+  .timestamp-kwd { color: #5f9ea0; }
+  .org-right  { margin-left: auto; margin-right: 0px;  text-align: right; }
+  .org-left   { margin-left: 0px;  margin-right: auto; text-align: left; }
+  .org-center { margin-left: auto; margin-right: auto; text-align: center; }
+  .underline { text-decoration: underline; }
+  #postamble p, #preamble p { font-size: 90%; margin: .2em; }
+  p.verse { margin-left: 3%; }
+  pre {
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background-color: #f2f2f2;
+    padding: 8pt;
+    font-family: monospace;
+    overflow: auto;
+    margin: 1.2em;
+  }
+  pre.src {
+    position: relative;
+    overflow: auto;
+  }
+  pre.src:before {
+    display: none;
+    position: absolute;
+    top: -8px;
+    right: 12px;
+    padding: 3px;
+    color: #555;
+    background-color: #f2f2f299;
+  }
+  pre.src:hover:before { display: inline; margin-top: 14px;}
+  /* Languages per Org manual */
+  pre.src-asymptote:before { content: 'Asymptote'; }
+  pre.src-awk:before { content: 'Awk'; }
+  pre.src-authinfo::before { content: 'Authinfo'; }
+  pre.src-C:before { content: 'C'; }
+  /* pre.src-C++ doesn't work in CSS */
+  pre.src-clojure:before { content: 'Clojure'; }
+  pre.src-css:before { content: 'CSS'; }
+  pre.src-D:before { content: 'D'; }
+  pre.src-ditaa:before { content: 'ditaa'; }
+  pre.src-dot:before { content: 'Graphviz'; }
+  pre.src-calc:before { content: 'Emacs Calc'; }
+  pre.src-emacs-lisp:before { content: 'Emacs Lisp'; }
+  pre.src-fortran:before { content: 'Fortran'; }
+  pre.src-gnuplot:before { content: 'gnuplot'; }
+  pre.src-haskell:before { content: 'Haskell'; }
+  pre.src-hledger:before { content: 'hledger'; }
+  pre.src-java:before { content: 'Java'; }
+  pre.src-js:before { content: 'Javascript'; }
+  pre.src-latex:before { content: 'LaTeX'; }
+  pre.src-ledger:before { content: 'Ledger'; }
+  pre.src-lisp:before { content: 'Lisp'; }
+  pre.src-lilypond:before { content: 'Lilypond'; }
+  pre.src-lua:before { content: 'Lua'; }
+  pre.src-matlab:before { content: 'MATLAB'; }
+  pre.src-mscgen:before { content: 'Mscgen'; }
+  pre.src-ocaml:before { content: 'Objective Caml'; }
+  pre.src-octave:before { content: 'Octave'; }
+  pre.src-org:before { content: 'Org mode'; }
+  pre.src-oz:before { content: 'OZ'; }
+  pre.src-plantuml:before { content: 'Plantuml'; }
+  pre.src-processing:before { content: 'Processing.js'; }
+  pre.src-python:before { content: 'Python'; }
+  pre.src-R:before { content: 'R'; }
+  pre.src-ruby:before { content: 'Ruby'; }
+  pre.src-sass:before { content: 'Sass'; }
+  pre.src-scheme:before { content: 'Scheme'; }
+  pre.src-screen:before { content: 'Gnu Screen'; }
+  pre.src-sed:before { content: 'Sed'; }
+  pre.src-sh:before { content: 'shell'; }
+  pre.src-sql:before { content: 'SQL'; }
+  pre.src-sqlite:before { content: 'SQLite'; }
+  /* additional languages in org.el's org-babel-load-languages alist */
+  pre.src-forth:before { content: 'Forth'; }
+  pre.src-io:before { content: 'IO'; }
+  pre.src-J:before { content: 'J'; }
+  pre.src-makefile:before { content: 'Makefile'; }
+  pre.src-maxima:before { content: 'Maxima'; }
+  pre.src-perl:before { content: 'Perl'; }
+  pre.src-picolisp:before { content: 'Pico Lisp'; }
+  pre.src-scala:before { content: 'Scala'; }
+  pre.src-shell:before { content: 'Shell Script'; }
+  pre.src-ebnf2ps:before { content: 'ebfn2ps'; }
+  /* additional language identifiers per "defun org-babel-execute"
+       in ob-*.el */
+  pre.src-cpp:before  { content: 'C++'; }
+  pre.src-abc:before  { content: 'ABC'; }
+  pre.src-coq:before  { content: 'Coq'; }
+  pre.src-groovy:before  { content: 'Groovy'; }
+  /* additional language identifiers from org-babel-shell-names in
+     ob-shell.el: ob-shell is the only babel language using a lambda to put
+     the execution function name together. */
+  pre.src-bash:before  { content: 'bash'; }
+  pre.src-csh:before  { content: 'csh'; }
+  pre.src-ash:before  { content: 'ash'; }
+  pre.src-dash:before  { content: 'dash'; }
+  pre.src-ksh:before  { content: 'ksh'; }
+  pre.src-mksh:before  { content: 'mksh'; }
+  pre.src-posh:before  { content: 'posh'; }
+  /* Additional Emacs modes also supported by the LaTeX listings package */
+  pre.src-ada:before { content: 'Ada'; }
+  pre.src-asm:before { content: 'Assembler'; }
+  pre.src-caml:before { content: 'Caml'; }
+  pre.src-delphi:before { content: 'Delphi'; }
+  pre.src-html:before { content: 'HTML'; }
+  pre.src-idl:before { content: 'IDL'; }
+  pre.src-mercury:before { content: 'Mercury'; }
+  pre.src-metapost:before { content: 'MetaPost'; }
+  pre.src-modula-2:before { content: 'Modula-2'; }
+  pre.src-pascal:before { content: 'Pascal'; }
+  pre.src-ps:before { content: 'PostScript'; }
+  pre.src-prolog:before { content: 'Prolog'; }
+  pre.src-simula:before { content: 'Simula'; }
+  pre.src-tcl:before { content: 'tcl'; }
+  pre.src-tex:before { content: 'TeX'; }
+  pre.src-plain-tex:before { content: 'Plain TeX'; }
+  pre.src-verilog:before { content: 'Verilog'; }
+  pre.src-vhdl:before { content: 'VHDL'; }
+  pre.src-xml:before { content: 'XML'; }
+  pre.src-nxml:before { content: 'XML'; }
+  /* add a generic configuration mode; LaTeX export needs an additional
+     (add-to-list 'org-latex-listings-langs '(conf " ")) in .emacs */
+  pre.src-conf:before { content: 'Configuration File'; }
+
+  table { border-collapse:collapse; }
+  caption.t-above { caption-side: top; }
+  caption.t-bottom { caption-side: bottom; }
+  td, th { vertical-align:top;  }
+  th.org-right  { text-align: center;  }
+  th.org-left   { text-align: center;   }
+  th.org-center { text-align: center; }
+  td.org-right  { text-align: right;  }
+  td.org-left   { text-align: left;   }
+  td.org-center { text-align: center; }
+  dt { font-weight: bold; }
+  .footpara { display: inline; }
+  .footdef  { margin-bottom: 1em; }
+  .figure { padding: 1em; }
+  .figure p { text-align: center; }
+  .equation-container {
+    display: table;
+    text-align: center;
+    width: 100%;
+  }
+  .equation {
+    vertical-align: middle;
+  }
+  .equation-label {
+    display: table-cell;
+    text-align: right;
+    vertical-align: middle;
+  }
+  .inlinetask {
+    padding: 10px;
+    border: 2px solid gray;
+    margin: 10px;
+    background: #ffffcc;
+  }
+  #org-div-home-and-up
+   { text-align: right; font-size: 70%; white-space: nowrap; }
+  textarea { overflow-x: auto; }
+  .linenr { font-size: smaller }
+  .code-highlighted { background-color: #ffff00; }
+  .org-info-js_info-navigation { border-style: none; }
+  #org-info-js_console-label
+    { font-size: 10px; font-weight: bold; white-space: nowrap; }
+  .org-info-js_search-highlight
+    { background-color: #ffff00; color: #000000; font-weight: bold; }
+  .org-svg { }
+</style>
+</head>
+<body>
+<div id="content" class="content">
+<div id="table-of-contents" role="doc-toc">
+<h2>Table of Contents</h2>
+<div id="text-table-of-contents" role="doc-toc">
+<ul>
+<li><a href="#orga75f379">1. 10,000 Hours of Machine Learning.</a></li>
+<li><a href="#org6a49233">2. Structure of the Repository</a></li>
+<li><a href="#orgad77bb2">3. PORTFOLIO</a>
+<ul>
+<li><a href="#orgd23ba23">3.1. Projects</a></li>
+</ul>
+</li>
+<li><a href="#orgb9a95ea">4. Education</a></li>
+<li><a href="#orgc9ccc7b">5. PROFICIENCY</a></li>
+</ul>
+</div>
+</div>
+<div id="outline-container-orga75f379" class="outline-2">
+<h2 id="orga75f379"><span class="section-number-2">1.</span> 10,000 Hours of Machine Learning.</h2>
+<div class="outline-text-2" id="text-1">
+<blockquote>
+<p>
+"Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
+</p>
+</blockquote>
+
+<blockquote>
+<p>
+"S/he who has a why, can bear almost any how." - Friedrich Nietzche
+</p>
+</blockquote>
+
+<p>
+<i>Why do anything else, when the thing that you could do would help with everything else?</i>
+</p>
+<hr />
+
+<p>
+To become an expert at anything, there is a common denominator:
+</p>
+<div class="org-center">
+<p>
+10,000 hours of <b>deliberate practise</b> on the subject.
+</p>
+</div>
+</div>
+</div>
+
+<div id="outline-container-org6a49233" class="outline-2">
+<h2 id="org6a49233"><span class="section-number-2">2.</span> Structure of the Repository</h2>
+<div class="outline-text-2" id="text-2">
+<p>
+There are 3 main features:
+</p>
+<ol class="org-ol">
+<li>PORTFOLIO
+<ul class="org-ul">
+<li>Briefly, these are solutions to <b>classical</b> problems, MNIST, Boston Housing, XOR, etc.</li>
+</ul></li>
+<li>EDUCATION
+<ul class="org-ul">
+<li>These contain coursework from my university and MOOCs (that which I am allowed to share). Additionally my textbook solutions are included here.</li>
+</ul></li>
+<li>PROFICIENCY
+<ul class="org-ul">
+<li>These are my more complex and non-trivial projects. They are more fun, but also more novel and thus less deterministic; Kanye West chatbot, Peg Solitare Reinforcement Learner, Ultimate Frisbee Computer Vision, etc.</li>
+</ul></li>
+</ol>
+</div>
+</div>
+
+<div id="outline-container-orgad77bb2" class="outline-2">
+<h2 id="orgad77bb2"><span class="section-number-2">3.</span> PORTFOLIO</h2>
+<div class="outline-text-2" id="text-3">
+<p>
+In no particular order, here are a list of the methods you will find in the notebooks. The emphasis is on understanding their limitations, benefits and constructions.
+</p>
+
+<ul class="org-ul">
+<li>Least Squares Regression</li>
+<li>Random Forests</li>
+<li>Boosting, Bagging</li>
+<li>Ensemble Methods</li>
+<li>Multilayer Perceptrons</li>
+<li>Naive Bayes</li>
+<li>K-means regression</li>
+<li>K-nearest Neighbours Clustering</li>
+<li>Logistic Regression</li>
+<li>Decision Trees</li>
+<li>SVM</li>
+<li>Kernel Methods</li>
+<li>GAN's</li>
+<li>Stable Diffusion</li>
+<li>Recurrent Neural Networks</li>
+<li>Convolutional Neural Networks</li>
+<li>Transformers</li>
+<li>word2vec, GLoVE and NLP</li>
+<li>LLM</li>
+</ul>
+</div>
+
+<div id="outline-container-orgd23ba23" class="outline-3">
+<h3 id="orgd23ba23"><span class="section-number-3">3.1.</span> Projects</h3>
+<div class="outline-text-3" id="text-3-1">
+<p>
+To gain proficiency in all of the above methods, I have solved classical problems that lend themselves well to that particular method:
+</p>
+
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Dataset</th>
+<th scope="col" class="org-left">Accuracy</th>
+<th scope="col" class="org-left">Model</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">MNIST</td>
+<td class="org-left">A%</td>
+<td class="org-left">KNN</td>
+</tr>
+
+<tr>
+<td class="org-left">FMNIST</td>
+<td class="org-left">B%</td>
+<td class="org-left">Random Forest</td>
+</tr>
+
+<tr>
+<td class="org-left">KMNIST</td>
+<td class="org-left">C%</td>
+<td class="org-left">2-layer CNN</td>
+</tr>
+
+<tr>
+<td class="org-left">CIFAR</td>
+<td class="org-left">D%</td>
+<td class="org-left">CNN</td>
+</tr>
+
+<tr>
+<td class="org-left">IRIS</td>
+<td class="org-left">E%</td>
+<td class="org-left">SVM</td>
+</tr>
+
+<tr>
+<td class="org-left">ImageNet</td>
+<td class="org-left">F%</td>
+<td class="org-left">ResNet50</td>
+</tr>
+
+<tr>
+<td class="org-left">Sentiment140</td>
+<td class="org-left">G%</td>
+<td class="org-left">LSTM</td>
+</tr>
+
+<tr>
+<td class="org-left">Boston Housing</td>
+<td class="org-left">H%</td>
+<td class="org-left">Linear Regression</td>
+</tr>
+
+<tr>
+<td class="org-left">Wine Quality</td>
+<td class="org-left">I%</td>
+<td class="org-left">Gradient Boosting</td>
+</tr>
+
+<tr>
+<td class="org-left">Pima Indians Diabetes</td>
+<td class="org-left">J%</td>
+<td class="org-left">Decision Tree</td>
+</tr>
+
+<tr>
+<td class="org-left">IMDB Reviews</td>
+<td class="org-left">K%</td>
+<td class="org-left">BERT</td>
+</tr>
+
+<tr>
+<td class="org-left">KDD Cup 1999</td>
+<td class="org-left">L%</td>
+<td class="org-left">K-Means Clustering</td>
+</tr>
+
+<tr>
+<td class="org-left">Digits</td>
+<td class="org-left">M%</td>
+<td class="org-left">Gaussian Mixture Model</td>
+</tr>
+
+<tr>
+<td class="org-left">CartPole</td>
+<td class="org-left">N%</td>
+<td class="org-left">Deep Q-Network</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</div>
+
+<div id="outline-container-orgb9a95ea" class="outline-2">
+<h2 id="orgb9a95ea"><span class="section-number-2">4.</span> Education</h2>
+<div class="outline-text-2" id="text-4">
+<p>
+For mastery, a formal education is also required; either by way of open-courseware, or by paying an institution.
+</p>
+
+<p>
+I have done both, and overall benefitted as a result.
+</p>
+
+<ul class="org-ul">
+<li class="on"><code>[X]</code> UNSW AI</li>
+<li class="on"><code>[X]</code> UNSW Machine Learning and Data Mining</li>
+<li class="on"><code>[X]</code> UNSW Deep Learning and Neural Networks</li>
+<li class="trans"><code>[-]</code> UNSW Computer Vision</li>
+<li class="trans"><code>[-]</code> Stanford CS229 (Machine Learning)</li>
+<li class="trans"><code>[-]</code> Stanford CS230 (Deep Learning)</li>
+<li class="trans"><code>[-]</code> Mathematics for Machine Learning, Ong et al.</li>
+<li class="trans"><code>[-]</code> HOML (Hands on Machine Learning)</li>
+<li class="trans"><code>[-]</code> All of Statistics, Larry Wasserman</li>
+<li class="on"><code>[X]</code> Coursera Machine Learning Specialisation</li>
+<li class="on"><code>[X]</code> Coursera Deep Learning Specialisation</li>
+</ul>
+</div>
+</div>
+
+<ul class="task-list">
+<li><label><input type="checkbox" checked="" />UNSW AI</label></li>
+<li><label><input type="checkbox" checked="" />UNSW Machine Learning and
+Data Mining</label></li>
+<li><label><input type="checkbox" checked="" />UNSW Deep Learning and
+Neural Networks</label></li>
+<li><label><input type="checkbox" />UNSW Computer Vision</label></li>
+<li><label><input type="checkbox" />Stanford CS229 (Machine
+Learning)</label></li>
+<li><label><input type="checkbox" />Stanford CS230 (Deep
+Learning)</label></li>
+<li><label><input type="checkbox" />Mathematics for Machine Learning,
+Ong et al.</label></li>
+<li><label><input type="checkbox" />HOML (Hands on Machine
+Learning)</label></li>
+<li><label><input type="checkbox" />All of Statistics, Larry
+Wasserman</label></li>
+<li><label><input type="checkbox" checked="" />Coursera Machine Learning
+Specialisation</label></li>
+<li><label><input type="checkbox" checked="" />Coursera Deep Learning
+Specialisation</label></li>
+</ul>
+
+
+<div id="outline-container-orgc9ccc7b" class="outline-2">
+<h2 id="orgc9ccc7b"><span class="section-number-2">5.</span> PROFICIENCY</h2>
+<div class="outline-text-2" id="text-5">
+<p>
+To become proficient, I have applied my ML skills to solve problems of personal and social interest.
+</p>
+
+<ul class="org-ul">
+<li>Kanye West chatbot</li>
+<li>KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation</li>
+<li>Non-descriptive Ultimate Frisbee Statistics</li>
+<li>OCR</li>
+<li>Peg Solitaire RL</li>
+</ul>
+
+
+<blockquote>
+<p>
+"Read 2 papers a week" - Andrew Ng
+</p>
+</blockquote>
+</div>
+</div>
+</div>
+<div id="postamble" class="status">
+<p class="author">Author: Aayush Bajaj</p>
+<p class="date">Created: 2024-12-24 Tue 10:41</p>
+<p class="validation"><a href="https://validator.w3.org/check?uri=referer">Validate</a></p>
+</div>
+</body>
+</html>
