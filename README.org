@@ -85,8 +85,25 @@ I have done both, and overall benefitted as a result.
 - [-] Mathematics for Machine Learning, Ong et al.
 - [-] HOML (Hands on Machine Learning)
 - [-] All of Statistics, Larry Wasserman
-- [x] Coursera Machine Learning Specialisation
-- [x] Coursera Deep Learning Specialisation
+- [X] Coursera Machine Learning Specialisation
+- [X] Coursera Deep Learning Specialisation
+
+#+HTML: Literal HTML code for export
+#+BEGIN_EXPORT html
+<ul>
+  <li><input type="checkbox" checked disabled> UNSW AI</li>
+  <li><input type="checkbox" checked disabled> UNSW Machine Learning and Data Mining</li>
+  <li><input type="checkbox" checked disabled> UNSW Deep Learning and Neural Networks</li>
+  <li><input type="checkbox" disabled> UNSW Computer Vision</li>
+  <li><input type="checkbox" disabled> Stanford CS229 (Machine Learning)</li>
+  <li><input type="checkbox" disabled> Stanford CS230 (Deep Learning)</li>
+  <li><input type="checkbox" disabled> Mathematics for Machine Learning, Ong et al.</li>
+  <li><input type="checkbox" disabled> HOML (Hands on Machine Learning)</li>
+  <li><input type="checkbox" disabled> All of Statistics, Larry Wasserman</li>
+  <li><input type="checkbox" checked disabled> Coursera Machine Learning Specialisation</li>
+  <li><input type="checkbox" checked disabled> Coursera Deep Learning Specialisation</li>
+</ul>
+#+END_EXPORT
 
 * PROFICIENCY
 
