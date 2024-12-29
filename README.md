@@ -1,17 +1,20 @@
 
 # Table of Contents
 
-1.  [10,000 Hours of Machine Learning.](#org10b7dd7)
-2.  [Structure of the Repository](#orgdfa57d2)
-3.  [PORTFOLIO](#org82dd460)
-    1.  [Projects](#orge6f96a8)
-4.  [Education](#org8c68a86)
-5.  [PROFICIENCY](#orgbbed657)
+1.  [10,000 Hours of Machine Learning.](#orgb855f38)
+2.  [Structure of the Repository](#org13c127e)
+3.  [PORTFOLIO](#org2444ac5)
+    1.  [Projects](#org755d658)
+4.  [Education](#org2540866)
+5.  [PROFICIENCY](#org3e3dd0d)
 
 
-<a id="org10b7dd7"></a>
+<a id="orgb855f38"></a>
 
 # 10,000 Hours of Machine Learning.
+
+**note: the passion from this monolithic repository leaked into its parent subject - AI.**
+**as a result [abaj.ai](https://abaj.ai) was born, and now acts as a prose-wrapper for this repository**
 
 > "Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
 
@@ -30,7 +33,7 @@ To become an expert at anything, there is a common denominator:
 </div>
 
 
-<a id="orgdfa57d2"></a>
+<a id="org13c127e"></a>
 
 # Structure of the Repository
 
@@ -44,7 +47,7 @@ There are 3 main features:
     -   These are my more complex and non-trivial projects. They are more fun, but also more novel and thus less deterministic; Kanye West chatbot, Peg Solitare Reinforcement Learner, Ultimate Frisbee Computer Vision, etc.
 
 
-<a id="org82dd460"></a>
+<a id="org2444ac5"></a>
 
 # PORTFOLIO
 
@@ -71,7 +74,7 @@ In no particular order, here are a list of the methods you will find in the note
 -   LLM
 
 
-<a id="orge6f96a8"></a>
+<a id="org755d658"></a>
 
 ## Projects
 
@@ -196,7 +199,7 @@ To gain proficiency in all of the above methods, I have solved classical problem
 </table>
 
 
-<a id="org8c68a86"></a>
+<a id="org2540866"></a>
 
 # Education
 
@@ -217,17 +220,17 @@ I have done both, and overall benefitted as a result.
 -   [X] Coursera Deep Learning Specialisation
 
 
-<a id="orgbbed657"></a>
+<a id="org3e3dd0d"></a>
 
 # PROFICIENCY
 
 To become proficient, I have applied my ML skills to solve problems of personal and social interest.
 
--   Kanye West chatbot
--   KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
--   Non-descriptive Ultimate Frisbee Statistics
--   OCR
--   Peg Solitaire RL
+-   [X] Kanye West chatbot
+-   [X] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
+-   [ ] Non-descriptive Ultimate Frisbee Statistics
+-   [ ] OCR
+-   [ ] Peg Solitaire RL
 
 > "Read 2 papers a week" - Andrew Ng
 
