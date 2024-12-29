@@ -1,0 +1,106 @@
+* 10,000 Hours of Machine Learning.
+
+*note: the passion from this monolithic repository leaked into its parent subject - AI.*
+*as a result [[https://abaj.ai][abaj.ai]] was born, and now acts as a prose-wrapper for this repository*
+
+#+BEGIN_QUOTE
+"Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
+#+END_QUOTE
+
+#+BEGIN_QUOTE
+"S/he who has a why, can bear almost any how." - Friedrich Nietzche
+#+END_QUOTE
+
+/Why do anything else, when the thing that you could do would help with everything else?/
+-----
+
+To become an expert at anything, there is a common denominator:
+#+BEGIN_CENTER
+10,000 hours of *deliberate practise* on the subject.
+#+END_CENTER
+
+* Structure of the Repository
+There are 3 main features:
+1. PORTFOLIO
+   - Briefly, these are solutions to *classical* problems, MNIST, Boston Housing, XOR, etc.
+2. EDUCATION
+   - These contain coursework from my university and MOOCs (that which I am allowed to share). Additionally my textbook solutions are included here.
+3. PROFICIENCY
+   - These are my more complex and non-trivial projects. They are more fun, but also more novel and thus less deterministic; Kanye West chatbot, Peg Solitare Reinforcement Learner, Ultimate Frisbee Computer Vision, etc.
+
+* PORTFOLIO
+In no particular order, here are a list of the methods you will find in the notebooks. The emphasis is on understanding their limitations, benefits and constructions.
+
+- Least Squares Regression
+- Random Forests
+- Boosting, Bagging
+- Ensemble Methods
+- Multilayer Perceptrons
+- Naive Bayes
+- K-means regression
+- K-nearest Neighbours Clustering
+- Logistic Regression
+- Decision Trees
+- SVM
+- Kernel Methods
+- GAN's
+- Stable Diffusion
+- Recurrent Neural Networks
+- Convolutional Neural Networks
+- Transformers
+- word2vec, GLoVE and NLP
+- LLM
+  
+** Projects
+
+To gain proficiency in all of the above methods, I have solved classical problems that lend themselves well to that particular method:
+
+|-----------------------+----------+------------------------|
+| Dataset               | Accuracy | Model                  |
+|-----------------------+----------+------------------------|
+| MNIST                 | A%       | KNN                    |
+| FMNIST                | B%       | Random Forest          |
+| KMNIST                | C%       | 2-layer CNN            |
+| CIFAR                 | D%       | CNN                    |
+| IRIS                  | E%       | SVM                    |
+| ImageNet              | F%       | ResNet50               |
+| Sentiment140          | G%       | LSTM                   |
+| Boston Housing        | H%       | Linear Regression      |
+| Wine Quality          | I%       | Gradient Boosting      |
+| Pima Indians Diabetes | J%       | Decision Tree          |
+| IMDB Reviews          | K%       | BERT                   |
+| KDD Cup 1999          | L%       | K-Means Clustering     |
+| Digits                | M%       | Gaussian Mixture Model |
+| CartPole              | N%       | Deep Q-Network         |
+
+* Education
+For mastery, a formal education is also required; either by way of open-courseware, or by paying an institution.
+
+I have done both, and overall benefitted as a result.
+
+- [X] UNSW AI
+- [X] UNSW Machine Learning and Data Mining
+- [X] UNSW Deep Learning and Neural Networks
+- [ ] UNSW Computer Vision
+- [ ] Stanford CS229 (Machine Learning)
+- [ ] Stanford CS230 (Deep Learning)
+- [ ] Mathematics for Machine Learning, Ong et al.
+- [ ] HOML (Hands on Machine Learning)
+- [ ] All of Statistics, Larry Wasserman
+- [X] Coursera Machine Learning Specialisation
+- [X] Coursera Deep Learning Specialisation
+
+* PROFICIENCY
+
+To become proficient, I have applied my ML skills to solve problems of personal and social interest.
+
+- [X] Kanye West chatbot
+- [X] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
+- [ ] Non-descriptive Ultimate Frisbee Statistics
+- [ ] OCR
+- [ ] Peg Solitaire RL
+
+#+BEGIN_QUOTE
+"Read 2 papers a week" - Andrew Ng
+#+END_QUOTE
+
