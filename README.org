@@ -1,7 +1,9 @@
-* 10,000 Hours of Machine Learning.
+* Context
 
-*note: the passion from this monolithic repository leaked into its parent subject - AI.*
-*as a result [[https://abaj.ai][abaj.ai]] was born, and now acts as a prose-wrapper for this repository*
+This repo is my 10,000 Hours of Machine Learning.
+
+*IMPORTANT: this repository eventually grew in scope and thus [[https://abaj.ai][abaj.ai]] was born.
+All of the files in this repository are a submodule of that repo, and all of the code is tangled with org files in the site*
 
 #+BEGIN_QUOTE
 "Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
@@ -11,7 +13,7 @@
 "S/he who has a why, can bear almost any how." - Friedrich Nietzche
 #+END_QUOTE
 
-/Why do anything else, when the thing that you could do would help with everything else?/
+/Why do anything else, when the thing that you could do, would do, everything else?/
 -----
 
 To become an expert at anything, there is a common denominator:
