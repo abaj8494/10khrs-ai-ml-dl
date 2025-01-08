@@ -1,26 +1,28 @@
 
 # Table of Contents
 
-1.  [10,000 Hours of Machine Learning.](#orgb855f38)
-2.  [Structure of the Repository](#org13c127e)
-3.  [PORTFOLIO](#org2444ac5)
-    1.  [Projects](#org755d658)
-4.  [Education](#org2540866)
-5.  [PROFICIENCY](#org3e3dd0d)
+1.  [Context](#org6dbe148)
+2.  [Structure of the Repository](#org65603ff)
+3.  [PORTFOLIO](#orga34978d)
+    1.  [Projects](#org6755429)
+4.  [Education](#orgcfaa906)
+5.  [PROFICIENCY](#orge067afe)
 
 
-<a id="orgb855f38"></a>
+<a id="org6dbe148"></a>
 
-# 10,000 Hours of Machine Learning.
+# Context
 
-**note: the passion from this monolithic repository leaked into its parent subject - AI.**
-**as a result [abaj.ai](https://abaj.ai) was born, and now acts as a prose-wrapper for this repository**
+This repo is my 10,000 Hours of Machine Learning.
+
+**IMPORTANT: this repository eventually grew in scope and thus [abaj.ai](https://abaj.ai) was born.
+All of the files in this repository are a submodule of that repo, and all of the code is tangled with org files in the site**
 
 > "Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
 
 > "S/he who has a why, can bear almost any how." - Friedrich Nietzche
 
-*Why do anything else, when the thing that you could do would help with everything else?*
+*Why do anything else, when the thing that you could do, would do, everything else?*
 
 ---
 
@@ -33,7 +35,7 @@ To become an expert at anything, there is a common denominator:
 </div>
 
 
-<a id="org13c127e"></a>
+<a id="org65603ff"></a>
 
 # Structure of the Repository
 
@@ -42,12 +44,12 @@ There are 3 main features:
 1.  PORTFOLIO
     -   Briefly, these are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
 2.  EDUCATION
-    -   These contain coursework from my university and MOOCs (that which I am allowed to share). Additionally my textbook solutions are included here.
+    -   This folder contains coursework from my universities and MOOCs (that which I am allowed to share). Additionally my textbook solutions are included here.
 3.  PROFICIENCY
     -   These are my more complex and non-trivial projects. They are more fun, but also more novel and thus less deterministic; Kanye West chatbot, Peg Solitare Reinforcement Learner, Ultimate Frisbee Computer Vision, etc.
 
 
-<a id="org2444ac5"></a>
+<a id="orga34978d"></a>
 
 # PORTFOLIO
 
@@ -74,7 +76,7 @@ In no particular order, here are a list of the methods you will find in the note
 -   LLM
 
 
-<a id="org755d658"></a>
+<a id="org6755429"></a>
 
 ## Projects
 
@@ -101,8 +103,8 @@ To gain proficiency in all of the above methods, I have solved classical problem
 <tbody>
 <tr>
 <td class="org-left">MNIST</td>
-<td class="org-left">A%</td>
-<td class="org-left">KNN</td>
+<td class="org-left">92%</td>
+<td class="org-left">Logistic Regression</td>
 </tr>
 
 
@@ -199,7 +201,7 @@ To gain proficiency in all of the above methods, I have solved classical problem
 </table>
 
 
-<a id="org2540866"></a>
+<a id="orgcfaa906"></a>
 
 # Education
 
@@ -220,14 +222,14 @@ I have done both, and overall benefitted as a result.
 -   [X] Coursera Deep Learning Specialisation
 
 
-<a id="org3e3dd0d"></a>
+<a id="orge067afe"></a>
 
 # PROFICIENCY
 
 To become proficient, I have applied my ML skills to solve problems of personal and social interest.
 
--   [X] Kanye West chatbot
--   [X] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
+-   [ ] Kanye West Producer
+-   [ ] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
 -   [ ] Non-descriptive Ultimate Frisbee Statistics
 -   [ ] OCR
 -   [ ] Peg Solitaire RL

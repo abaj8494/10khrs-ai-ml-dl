@@ -26,7 +26,7 @@ There are 3 main features:
 1. PORTFOLIO
    - Briefly, these are solutions to *classical* problems, MNIST, Boston Housing, XOR, etc.
 2. EDUCATION
-   - These contain coursework from my university and MOOCs (that which I am allowed to share). Additionally my textbook solutions are included here.
+   - This folder contains coursework from my universities and MOOCs (that which I am allowed to share). Additionally my textbook solutions are included here.
 3. PROFICIENCY
    - These are my more complex and non-trivial projects. They are more fun, but also more novel and thus less deterministic; Kanye West chatbot, Peg Solitare Reinforcement Learner, Ultimate Frisbee Computer Vision, etc.
 
@@ -60,7 +60,7 @@ To gain proficiency in all of the above methods, I have solved classical problem
 |-----------------------+----------+------------------------|
 | Dataset               | Accuracy | Model                  |
 |-----------------------+----------+------------------------|
-| MNIST                 | A%       | KNN                    |
+| MNIST                 | 92%      | Logistic Regression    |
 | FMNIST                | B%       | Random Forest          |
 | KMNIST                | C%       | 2-layer CNN            |
 | CIFAR                 | D%       | CNN                    |
@@ -96,12 +96,12 @@ I have done both, and overall benefitted as a result.
 
 To become proficient, I have applied my ML skills to solve problems of personal and social interest.
 
-- [X] Kanye West chatbot
-- [X] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
+- [ ] Kanye West Producer
+- [ ] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
 - [ ] Non-descriptive Ultimate Frisbee Statistics
 - [ ] OCR
 - [ ] Peg Solitaire RL
-
+  
 #+BEGIN_QUOTE
 "Read 2 papers a week" - Andrew Ng
 #+END_QUOTE
