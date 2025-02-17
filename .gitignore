@@ -3,4 +3,5 @@
 ./cuda/
 *.p
 *.pth
+PROJECTS/ocr/data/
 
