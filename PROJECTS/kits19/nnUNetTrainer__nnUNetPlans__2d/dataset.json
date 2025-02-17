@@ -1,0 +1,12 @@
+{
+    "labels": {
+        "background": 0,
+        "kidney": 1,
+        "tumour": 2
+    },
+    "channel_names": {
+        "0": "CT"
+    },
+    "file_ending": ".nii.gz",
+    "numTraining": 100
+}

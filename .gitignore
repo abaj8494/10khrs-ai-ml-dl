@@ -1,5 +1,6 @@
 ./unsw
 ./comp9417
 ./cuda/
-
+*.p
+*.pth
 

@@ -1,0 +1,521 @@
+
+#######################################################################
+Please cite the following paper when using nnU-Net:
+Isensee, F., Jaeger, P. F., Kohl, S. A., Petersen, J., & Maier-Hein, K. H. (2021). nnU-Net: a self-configuring method for deep learning-based biomedical image segmentation. Nature methods, 18(2), 203-211.
+#######################################################################
+ 
+2025-01-30 18:17:03.110586: Using torch.compile... 
+2025-01-30 18:17:07.741029: do_dummy_2d_data_aug: False 
+2025-01-30 18:17:07.754910: Using splits from existing split file: /srv/scratch/z5362216/kits19/nnUNet_db/nnUNet_preprocessed/Dataset001_Kits19/splits_final.json 
+2025-01-30 18:17:07.777078: The split file contains 5 splits. 
+2025-01-30 18:17:07.780115: Desired fold for training: 2 
+2025-01-30 18:17:07.783152: This split has 80 training and 20 validation cases. 
+
+This is the configuration used by this training:
+Configuration name: 3d_lowres
+ {'data_identifier': 'nnUNetPlans_3d_lowres', 'preprocessor_name': 'DefaultPreprocessor', 'batch_size': 2, 'patch_size': [128, 128, 128], 'median_image_size_in_voxels': [200, 205, 205], 'spacing': [1.9849520718478983, 1.9849270710444444, 1.9849270710444444], 'normalization_schemes': ['CTNormalization'], 'use_mask_for_norm': [False], 'resampling_fn_data': 'resample_data_or_seg_to_shape', 'resampling_fn_seg': 'resample_data_or_seg_to_shape', 'resampling_fn_data_kwargs': {'is_seg': False, 'order': 3, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_seg_kwargs': {'is_seg': True, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'resampling_fn_probabilities': 'resample_data_or_seg_to_shape', 'resampling_fn_probabilities_kwargs': {'is_seg': False, 'order': 1, 'order_z': 0, 'force_separate_z': None}, 'architecture': {'network_class_name': 'dynamic_network_architectures.architectures.unet.PlainConvUNet', 'arch_kwargs': {'n_stages': 6, 'features_per_stage': [32, 64, 128, 256, 320, 320], 'conv_op': 'torch.nn.modules.conv.Conv3d', 'kernel_sizes': [[3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3], [3, 3, 3]], 'strides': [[1, 1, 1], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2], [2, 2, 2]], 'n_conv_per_stage': [2, 2, 2, 2, 2, 2], 'n_conv_per_stage_decoder': [2, 2, 2, 2, 2], 'conv_bias': True, 'norm_op': 'torch.nn.modules.instancenorm.InstanceNorm3d', 'norm_op_kwargs': {'eps': 1e-05, 'affine': True}, 'dropout_op': None, 'dropout_op_kwargs': None, 'nonlin': 'torch.nn.LeakyReLU', 'nonlin_kwargs': {'inplace': True}, 'deep_supervision': True}, '_kw_requires_import': ['conv_op', 'norm_op', 'dropout_op', 'nonlin']}, 'batch_dice': False, 'next_stage': '3d_cascade_fullres'} 
+ 
+These are the global plan.json settings:
+ {'dataset_name': 'Dataset001_Kits19', 'plans_name': 'nnUNetPlans', 'original_median_spacing_after_transp': [3.0, 0.7939453125, 0.7939453125], 'original_median_shape_after_transp': [104, 512, 512], 'image_reader_writer': 'SimpleITKIO', 'transpose_forward': [2, 0, 1], 'transpose_backward': [1, 2, 0], 'experiment_planner_used': 'ExperimentPlanner', 'label_manager': 'LabelManager', 'foreground_intensity_properties_per_channel': {'0': {'max': 2553.0, 'mean': 104.46720886230469, 'median': 104.0, 'min': -277.0, 'percentile_00_5': -73.0, 'percentile_99_5': 292.0, 'std': 74.68063354492188}}} 
+ 
+2025-01-30 18:17:10.315706: unpacking dataset... 
+2025-01-30 18:17:26.915507: unpacking done... 
+2025-01-30 18:17:26.969329: 
+printing the network instead:
+ 
+2025-01-30 18:17:26.971793: OptimizedModule(
+  (_orig_mod): PlainConvUNet(
+    (encoder): PlainConvEncoder(
+      (stages): Sequential(
+        (0): Sequential(
+          (0): StackedConvBlocks(
+            (convs): Sequential(
+              (0): ConvDropoutNormReLU(
+                (conv): Conv3d(1, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(1, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+              (1): ConvDropoutNormReLU(
+                (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+            )
+          )
+        )
+        (1): Sequential(
+          (0): StackedConvBlocks(
+            (convs): Sequential(
+              (0): ConvDropoutNormReLU(
+                (conv): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+              (1): ConvDropoutNormReLU(
+                (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+            )
+          )
+        )
+        (2): Sequential(
+          (0): StackedConvBlocks(
+            (convs): Sequential(
+              (0): ConvDropoutNormReLU(
+                (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+              (1): ConvDropoutNormReLU(
+                (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+            )
+          )
+        )
+        (3): Sequential(
+          (0): StackedConvBlocks(
+            (convs): Sequential(
+              (0): ConvDropoutNormReLU(
+                (conv): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+              (1): ConvDropoutNormReLU(
+                (conv): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+            )
+          )
+        )
+        (4): Sequential(
+          (0): StackedConvBlocks(
+            (convs): Sequential(
+              (0): ConvDropoutNormReLU(
+                (conv): Conv3d(256, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(256, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+              (1): ConvDropoutNormReLU(
+                (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+            )
+          )
+        )
+        (5): Sequential(
+          (0): StackedConvBlocks(
+            (convs): Sequential(
+              (0): ConvDropoutNormReLU(
+                (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+              (1): ConvDropoutNormReLU(
+                (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                (all_modules): Sequential(
+                  (0): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                )
+              )
+            )
+          )
+        )
+      )
+    )
+    (decoder): UNetDecoder(
+      (encoder): PlainConvEncoder(
+        (stages): Sequential(
+          (0): Sequential(
+            (0): StackedConvBlocks(
+              (convs): Sequential(
+                (0): ConvDropoutNormReLU(
+                  (conv): Conv3d(1, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(1, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+                (1): ConvDropoutNormReLU(
+                  (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+              )
+            )
+          )
+          (1): Sequential(
+            (0): StackedConvBlocks(
+              (convs): Sequential(
+                (0): ConvDropoutNormReLU(
+                  (conv): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(32, 64, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+                (1): ConvDropoutNormReLU(
+                  (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+              )
+            )
+          )
+          (2): Sequential(
+            (0): StackedConvBlocks(
+              (convs): Sequential(
+                (0): ConvDropoutNormReLU(
+                  (conv): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(64, 128, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+                (1): ConvDropoutNormReLU(
+                  (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+              )
+            )
+          )
+          (3): Sequential(
+            (0): StackedConvBlocks(
+              (convs): Sequential(
+                (0): ConvDropoutNormReLU(
+                  (conv): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(128, 256, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+                (1): ConvDropoutNormReLU(
+                  (conv): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+              )
+            )
+          )
+          (4): Sequential(
+            (0): StackedConvBlocks(
+              (convs): Sequential(
+                (0): ConvDropoutNormReLU(
+                  (conv): Conv3d(256, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(256, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+                (1): ConvDropoutNormReLU(
+                  (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+              )
+            )
+          )
+          (5): Sequential(
+            (0): StackedConvBlocks(
+              (convs): Sequential(
+                (0): ConvDropoutNormReLU(
+                  (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(2, 2, 2), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+                (1): ConvDropoutNormReLU(
+                  (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                  (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                  (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+                  (all_modules): Sequential(
+                    (0): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                    (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                    (2): LeakyReLU(negative_slope=0.01, inplace=True)
+                  )
+                )
+              )
+            )
+          )
+        )
+      )
+      (stages): ModuleList(
+        (0): StackedConvBlocks(
+          (convs): Sequential(
+            (0): ConvDropoutNormReLU(
+              (conv): Conv3d(640, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(640, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+            (1): ConvDropoutNormReLU(
+              (conv): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(320, 320, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(320, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+          )
+        )
+        (1): StackedConvBlocks(
+          (convs): Sequential(
+            (0): ConvDropoutNormReLU(
+              (conv): Conv3d(512, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(512, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+            (1): ConvDropoutNormReLU(
+              (conv): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(256, 256, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(256, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+          )
+        )
+        (2): StackedConvBlocks(
+          (convs): Sequential(
+            (0): ConvDropoutNormReLU(
+              (conv): Conv3d(256, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(256, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+            (1): ConvDropoutNormReLU(
+              (conv): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(128, 128, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(128, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+          )
+        )
+        (3): StackedConvBlocks(
+          (convs): Sequential(
+            (0): ConvDropoutNormReLU(
+              (conv): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(128, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+            (1): ConvDropoutNormReLU(
+              (conv): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(64, 64, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(64, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+          )
+        )
+        (4): StackedConvBlocks(
+          (convs): Sequential(
+            (0): ConvDropoutNormReLU(
+              (conv): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(64, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+            (1): ConvDropoutNormReLU(
+              (conv): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+              (norm): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+              (nonlin): LeakyReLU(negative_slope=0.01, inplace=True)
+              (all_modules): Sequential(
+                (0): Conv3d(32, 32, kernel_size=(3, 3, 3), stride=(1, 1, 1), padding=(1, 1, 1))
+                (1): InstanceNorm3d(32, eps=1e-05, momentum=0.1, affine=True, track_running_stats=False)
+                (2): LeakyReLU(negative_slope=0.01, inplace=True)
+              )
+            )
+          )
+        )
+      )
+      (transpconvs): ModuleList(
+        (0): ConvTranspose3d(320, 320, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+        (1): ConvTranspose3d(320, 256, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+        (2): ConvTranspose3d(256, 128, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+        (3): ConvTranspose3d(128, 64, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+        (4): ConvTranspose3d(64, 32, kernel_size=(2, 2, 2), stride=(2, 2, 2))
+      )
+      (seg_layers): ModuleList(
+        (0): Conv3d(320, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        (1): Conv3d(256, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        (2): Conv3d(128, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        (3): Conv3d(64, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+        (4): Conv3d(32, 3, kernel_size=(1, 1, 1), stride=(1, 1, 1))
+      )
+    )
+  )
+) 
+2025-01-30 18:17:26.979434: 
+ 
+2025-01-30 18:17:26.981640: Unable to plot network architecture: nnUNet_compile is enabled! 
+2025-01-30 18:17:27.661598: Training done. 
+2025-01-30 18:17:27.795776: Using splits from existing split file: /srv/scratch/z5362216/kits19/nnUNet_db/nnUNet_preprocessed/Dataset001_Kits19/splits_final.json 
+2025-01-30 18:17:27.798383: The split file contains 5 splits. 
+2025-01-30 18:17:27.800427: Desired fold for training: 2 
+2025-01-30 18:17:27.802403: This split has 80 training and 20 validation cases. 
+2025-01-30 18:17:27.808982: predicting imaging_012 
+2025-01-30 18:17:27.815113: imaging_012, shape torch.Size([1, 224, 194, 194]), rank 0 
+2025-01-30 18:18:15.238899: predicting imaging_016 
+2025-01-30 18:18:15.252018: imaging_016, shape torch.Size([1, 224, 168, 168]), rank 0 
+2025-01-30 18:18:23.857034: predicting imaging_018 
+2025-01-30 18:18:23.866795: imaging_018, shape torch.Size([1, 152, 222, 222]), rank 0 
+2025-01-30 18:18:27.955269: predicting imaging_019 
+2025-01-30 18:18:27.966288: imaging_019, shape torch.Size([1, 244, 242, 242]), rank 0 
+2025-01-30 18:18:34.347752: predicting imaging_021 
+2025-01-30 18:18:34.356116: imaging_021, shape torch.Size([1, 96, 212, 212]), rank 0 
+2025-01-30 18:18:36.685094: predicting imaging_022 
+2025-01-30 18:18:36.693883: imaging_022, shape torch.Size([1, 136, 215, 215]), rank 0 
+2025-01-30 18:18:49.734688: predicting imaging_024 
+2025-01-30 18:18:49.743545: imaging_024, shape torch.Size([1, 214, 171, 171]), rank 0 
+2025-01-30 18:18:52.694361: predicting imaging_027 
+2025-01-30 18:18:52.702985: imaging_027, shape torch.Size([1, 182, 231, 231]), rank 0 
+2025-01-30 18:19:06.422662: predicting imaging_032 
+2025-01-30 18:19:06.434128: imaging_032, shape torch.Size([1, 238, 201, 201]), rank 0 
+2025-01-30 18:19:12.528287: predicting imaging_048 
+2025-01-30 18:19:12.536031: imaging_048, shape torch.Size([1, 214, 269, 269]), rank 0 
+2025-01-30 18:19:24.909537: predicting imaging_058 
+2025-01-30 18:19:24.927191: imaging_058, shape torch.Size([1, 259, 245, 245]), rank 0 
+2025-01-30 18:19:41.026260: predicting imaging_062 
+2025-01-30 18:19:41.036840: imaging_062, shape torch.Size([1, 217, 252, 252]), rank 0 
+2025-01-30 18:19:50.562161: predicting imaging_068 
+2025-01-30 18:19:50.575208: imaging_068, shape torch.Size([1, 158, 181, 181]), rank 0 
