@@ -1,5 +1,5 @@
 DATA_DIR = 'data/'
-DATASET = 'mnist'
+DATASET = 'fmnist'
 TEST_DATA_FILENAME = DATA_DIR + DATASET + '/t10k-images-idx3-ubyte'
 TEST_LABELS_FILENAME = DATA_DIR + DATASET + '/t10k-labels-idx1-ubyte'
 TRAIN_DATA_FILENAME = DATA_DIR + DATASET + '/train-images-idx3-ubyte'
@@ -52,6 +52,22 @@ def extract_features(X):
     return [flatten_list(sample) for sample in X]
 
 
+def classify_one(args):
+    test_sample_idx, test_sample, X_train, y_train, k = args # unpack args
+    print(test_sample_idx)
+    training_distances = [dist(train_sample, test_sample) for train_sample in X_train]
+    sorted_distance_indices = [
+        pair[0]
+        for pair in sorted(enumerate(training_distances), key=lambda x: x[1])
+    ]
+    candidates = [y_train[idx] for idx in sorted_distance_indices[:k]]
+    top_candidate = max(candidates, key=candidates.count)
+    return top_candidate
+
+
+from multiprocessing import Pool
+import multiprocessing
+
 def dist(x, y):
     return sum(
         [
@@ -60,29 +76,10 @@ def dist(x, y):
     ) ** 0.5
 
 
-def get_training_distances_for_test_sample(X_train, test_sample):
-    return [dist(train_sample, test_sample) for train_sample in X_train]
-
-
-def knn(X_train, y_train, X_test, y_test, k=3):
-    y_pred = []
-    for test_sample_idx, test_sample in enumerate(X_test):
-        training_distances = get_training_distances_for_test_sample(
-            X_train, test_sample
-        )
-        sorted_distance_indices = [
-            pair[0]
-            for pair in sorted(
-                    enumerate(training_distances),
-                    key=lambda x: x[1]
-            )
-        ]
-        candidates = [
-            y_train[idx]
-            for idx in sorted_distance_indices[:k]
-        ]
-        top_candidate = max(candidates, key=candidates.count)
-        y_pred.append(top_candidate)
+def knn(X_train, y_train, X_test, k=3):
+    with Pool(processes=multiprocessing.cpu_count()) as pool:
+        work_items = [(test_sample_idx, test_sample, X_train, y_train, k) for test_sample_idx, test_sample in enumerate(X_test)]
+        y_pred = pool.map(classify_one, work_items)
     return y_pred
 
 
@@ -102,8 +99,8 @@ def get_garment_from_label(label):
 
 
 def main():
-    n_train = 10000
-    n_test = 100
+    n_train = 60000
+    n_test = 10000
     k = 7
     print(f"Dataset: {DATASET}")
     print(f"n_train: {n_train}")
@@ -134,6 +131,6 @@ def main():
 
     print(f"Accuracy: {accuracy * 100}%")
 
-    
+
 if __name__ == '__main__':
     main()
