@@ -3,10 +3,9 @@
 
 1.  [Context](#org6dbe148)
 2.  [Structure of the Repository](#org65603ff)
-3.  [PORTFOLIO](#orga34978d)
-    1.  [Projects](#org6755429)
-4.  [Education](#orgcfaa906)
-5.  [PROFICIENCY](#orge067afe)
+3.  [Problems](#orga34978d)
+4.  [Learning](#orgcfaa906)
+5.  [Projects](#orge067afe)
 
 
 <a id="org6dbe148"></a>
@@ -41,17 +40,16 @@ To become an expert at anything, there is a common denominator:
 
 There are 3 main features:
 
-1.  PORTFOLIO
+1.  Problems
     -   Briefly, these are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
-2.  EDUCATION
-    -   This folder contains coursework from my universities and MOOCs (that which I am allowed to share). Additionally my textbook solutions are included here.
-3.  PROFICIENCY
-    -   These are my more complex and non-trivial projects. They are more fun, but also more novel and thus less deterministic; Kanye West chatbot, Peg Solitare Reinforcement Learner, Ultimate Frisbee Computer Vision, etc.
-
+2.  Learning
+    -   This folder contains textbook exercises, open courseware material, youtube lecture series and any UNSW coursework that it is appropriate for me to publicly version control. The folders contain highly non-trivial code: Shakespeare speaker, GPT-2 implementation, etc.
+3.  Projects
+    -   These are my more complex and non-trivial projects. They are more fun, but their scopes are undefined / defined loosely by myself. There is a Kanye West chatbot based on the Attention architecture. There is also a Peg Solitare Reinforcement Learner and plans for Ultimate Frisbee Rules App that is fine-tuned.
 
 <a id="orga34978d"></a>
 
-# PORTFOLIO
+# Problems
 
 In no particular order, here are a list of the methods you will find in the notebooks. The emphasis is on understanding their limitations, benefits and constructions.
 
@@ -74,11 +72,6 @@ In no particular order, here are a list of the methods you will find in the note
 -   Transformers
 -   word2vec, GLoVE and NLP
 -   LLM
-
-
-<a id="org6755429"></a>
-
-## Projects
 
 To gain proficiency in all of the above methods, I have solved classical problems that lend themselves well to that particular method:
 
@@ -203,36 +196,37 @@ To gain proficiency in all of the above methods, I have solved classical problem
 
 <a id="orgcfaa906"></a>
 
-# Education
+# Learning
 
 For mastery, a formal education is also required; either by way of open-courseware, or by paying an institution.
 
 I have done both, and overall benefitted as a result.
 
+-   [X] Zero to Hero - Andrej Karpathy
+-   [X] Neural Networks and Deep Learning - Michael Nielsen
 -   [X] UNSW AI
 -   [X] UNSW Machine Learning and Data Mining
 -   [X] UNSW Deep Learning and Neural Networks
 -   [ ] UNSW Computer Vision
 -   [ ] Stanford CS229 (Machine Learning)
 -   [ ] Stanford CS230 (Deep Learning)
--   [ ] Mathematics for Machine Learning, Ong et al.
--   [ ] HOML (Hands on Machine Learning)
+-   [.] Mathematics for Machine Learning, Ong et al.
+-   [o] HOML (Hands on Machine Learning)
 -   [ ] All of Statistics, Larry Wasserman
 -   [X] Coursera Machine Learning Specialisation
 -   [X] Coursera Deep Learning Specialisation
 
-
 <a id="orge067afe"></a>
 
-# PROFICIENCY
+# Projects
 
 To become proficient, I have applied my ML skills to solve problems of personal and social interest.
 
--   [ ] Kanye West Producer
--   [ ] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
--   [ ] Non-descriptive Ultimate Frisbee Statistics
--   [ ] OCR
--   [ ] Peg Solitaire RL
+-   [X] Kanye West Producer
+-   [X] KiTS19 Grand Challenge: Kidney and Kidney Tumour Segmentation
+-   [X] Ultimate Frisbee Rule App
+-   [X] OCR
+-   [X] Peg Solitaire RL
 
 > "Read 2 papers a week" - Andrew Ng
 
