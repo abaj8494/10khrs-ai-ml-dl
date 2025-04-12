@@ -3,5 +3,6 @@
 ./cuda/
 *.p
 *.pth
+*.pyc
 PROJECTS/ocr/data/
 
