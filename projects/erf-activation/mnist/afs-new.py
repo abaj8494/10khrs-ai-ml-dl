@@ -121,5 +121,5 @@ plt.legend()
 plt.grid(True)
 
 plt.tight_layout()
+plt.savefig("loss-acc.svg", format='svg')
 plt.show()
-
