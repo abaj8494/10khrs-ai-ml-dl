@@ -4,26 +4,20 @@ import torch.nn.functional as F
 from torch.utils.data import DataLoader
 from torchvision import datasets, transforms
 import matplotlib.pyplot as plt
-import numpy as np
 
-# Use MPS if available
+# Check for MPS (Apple Silicon)
 device = torch.device("mps" if torch.backends.mps.is_available() else "cpu")
 print(f"Using device: {device}")
 
-# Data loading
+# MNIST Dataset
 transform = transforms.ToTensor()
 train_data = datasets.MNIST(root='./data', train=True, download=True, transform=transform)
 train_loader = DataLoader(train_data, batch_size=64, shuffle=True)
 
-# Define different activation functions
-activations = {
-    'erf': lambda: nn.ModuleDict({'act': nn.Identity(), 'func': lambda x: torch.erf(x)}),
-    'sigmoid': lambda: nn.Sigmoid(),
-    'tanh': lambda: nn.Tanh(),
-    'relu': lambda: nn.ReLU()
-}
+# Supported activation names
+activation_names = ['erf', 'sigmoid', 'tanh', 'relu']
 
-# Neural network class that accepts an activation function
+# Neural network class with pluggable activation
 class Net(nn.Module):
     def __init__(self, activation_name):
         super(Net, self).__init__()
@@ -52,7 +46,7 @@ class Net(nn.Module):
         x = self.fc3(x)
         return x
 
-# Training loop
+# Training function
 def train_model(activation_name, epochs=10):
     model = Net(activation_name).to(device)
     optimizer = torch.optim.Adam(model.parameters(), lr=0.001)
@@ -88,14 +82,15 @@ def train_model(activation_name, epochs=10):
 
     return losses, accuracies
 
-# Train all models and store results
+# Run training for all activation functions
 results = {}
 epochs = 10
-for act_name in activations.keys():
+
+for act_name in activation_names:
     losses, accuracies = train_model(act_name, epochs=epochs)
     results[act_name] = {'loss': losses, 'acc': accuracies}
 
-# Plotting
+# Plot results
 colors = {
     'erf': 'blue',
     'sigmoid': 'red',
@@ -105,20 +100,20 @@ colors = {
 
 plt.figure(figsize=(12, 5))
 
-# Plot Loss
+# Loss Plot
 plt.subplot(1, 2, 1)
-for name, data in results.items():
-    plt.plot(data['loss'], label=name, color=colors[name])
+for name in activation_names:
+    plt.plot(results[name]['loss'], label=name, color=colors[name])
 plt.title('Training Loss')
 plt.xlabel('Epoch')
 plt.ylabel('Loss')
 plt.legend()
 plt.grid(True)
 
-# Plot Accuracy
+# Accuracy Plot
 plt.subplot(1, 2, 2)
-for name, data in results.items():
-    plt.plot(data['acc'], label=name, color=colors[name])
+for name in activation_names:
+    plt.plot(results[name]['acc'], label=name, color=colors[name])
 plt.title('Training Accuracy')
 plt.xlabel('Epoch')
 plt.ylabel('Accuracy')
