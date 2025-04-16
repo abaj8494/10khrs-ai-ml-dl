@@ -6,3 +6,4 @@
 *.pyc
 PROJECTS/ocr/data/
 
+*.gz
