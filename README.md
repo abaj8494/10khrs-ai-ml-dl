@@ -47,26 +47,26 @@ There are 3 main features:
 
 ##  Problems
 
-    -   These are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
-    -   They let me practice a particular _paradigm_ of problem solving, "Supervised Learning -> SVM", "Unsupervised Learning -> KNN", etc.
+-   These are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
+-   They let me practice a particular _paradigm_ of problem solving, "Supervised Learning -> SVM", "Unsupervised Learning -> KNN", etc.
 
 <a id="#learning"></a>
 
 ##  Learning
 
-    -   This folder contains the code I have written whilst following along with textbooks, open courseware and YouTube playlists. Some notable features are:
-        - Andrej Karpathy's entire [Zero to Hero series](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) series.
-        - Michael Neilson's book ["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/)
+-   This folder contains the code I have written whilst following along with textbooks, open courseware and YouTube playlists. Some notable features are:
+    - Andrej Karpathy's entire [Zero to Hero series](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) series.
+    - Michael Neilson's book ["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/)
 
 <a id="#projects"></a>
 
 ##  Projects
 
-    -   These are my hard-won pearls.
-    -   Difficult (to me) problems that were challenging and instructive to solve. Notable mentions:
-        - Peg Solitaire. recursive backtracking, rotation invariant algorithm. <a href="https://abaj.ai/projects/csp/peg-solitaire"><img src="https://abaj.ai/abs_hsv.svg" alt="Peg Solitaire" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>
-        - Hashiwokakero. reimplemented in Go with a test suite, see the spin-off [repo](https://github.com/abaj8494/hashi)
-        - Kits19: Kidney Segmentation using 2 and 3D volumetric data from CT scans. 57th on world [leaderboard](https://kits19.grand-challenge.org/evaluation/965bcad2-cbb9-42a8-8b56-a777c9f165e2/)
+-   These are my hard-won pearls.
+-   Difficult (to me) problems that were challenging and instructive to solve. Notable mentions:
+    - Peg Solitaire. recursive backtracking, rotation invariant algorithm. <a href="https://abaj.ai/projects/csp/peg-solitaire"><img src="https://abaj.ai/abs_hsv.svg" alt="Peg Solitaire" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>
+    - Hashiwokakero. reimplemented in Go with a test suite, see the spin-off [repo](https://github.com/abaj8494/hashi)
+    - Kits19: Kidney Segmentation using 2 and 3D volumetric data from CT scans. 57th on world [leaderboard](https://kits19.grand-challenge.org/evaluation/965bcad2-cbb9-42a8-8b56-a777c9f165e2/)
 
 
 
