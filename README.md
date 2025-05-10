@@ -43,20 +43,20 @@ To become an expert at anything, there is a common denominator:
 
 There are 3 main features:
 
-<a id="#orga34978d"></a>
+<a id="#problems"></a>
 
 ##  Problems
     -   These are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
     -   They let me practice a particular _paradigm_ of problem solving, "Supervised Learning -> SVM", "Unsupervised Learning -> KNN", etc.
 
-<a id="#orgcfaa906"></a>
+<a id="#learning"></a>
 
 ##  Learning
     -   This folder contains the code I have written whilst following along with textbooks, open courseware and YouTube playlists. Some notable features are:
         - Andrej Karpathy's entire [Zero to Hero series](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) series.
         - Michael Neilson's book ["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/)
 
-<a id="#orge067afe"></a>
+<a id="#projects"></a>
 
 ##  Projects
     -   These are my hard-won pearls.
