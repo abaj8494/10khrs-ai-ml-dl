@@ -3,9 +3,9 @@
 
 1.  [Context](#org6dbe148)
 2.  [Structure of the Repository](#org65603ff)
-3.  [Problems](#orga34978d)
-4.  [Learning](#orgcfaa906)
-5.  [Projects](#orge067afe)
+3.  [Problems](#problems)
+4.  [Learning](#learning)
+5.  [Projects](#projects)
 
 
 <a id="org6dbe148"></a>
