@@ -329,11 +329,7 @@ bool can_build_bridge(Puzzle p, Island curr, int dir) {
     
 
   if(!overlap) {
-    /* -------- in can_build_bridge --------------------------------------- */
-    int dx = abs(i1->x - i2->x);
-    int dy = abs(i1->y - i2->y);
-    int dist = dx + dy;               /* always the manhattan distance   */
-    //int dist = abs(i1->x - i2->x + i1->y - i2->y);
+    int dist = abs(i1->x - i2->x + i1->y - i2->y);
     switch(dir){
       case UP:
         for(int i = 1; i < dist; i++) {
@@ -405,28 +401,23 @@ void remove_bridge(Puzzle p, Island curr, int dir) {
       break;
     }
   }
-    /* 1. really delete an empty edge */
-    if (b->wires == 0) {          /* we found it with wires==0 already */
-        b->skip = true;           /* mark it */
-        return;
-    }
-
-    /* 2. decrement */
-    --b->wires;
-    --i1->curr_bridges;
-    --i2->curr_bridges;
-
-    /* 3. if it *became* zero, retire it now */
-    if (b->wires == 0) {
-        b->skip = true;           /* ← NEW */
-        /* optionally compact p->edges or just ignore skipped ones */
-        return;
-    }
-
-    /* 4. still 1 or 2 – change the drawing symbol */
-    b->symbol = (b->direction == LEFT || b->direction == RIGHT) ?
-                (b->wires == 1 ? '-' : '=') :
-                (b->wires == 1 ? '|' : '"');
+  if(b->wires == 0) { //free the bridge
+    b->skip = true;
+    return;
+  }
+  b->wires--;
+  i1->curr_bridges--;
+  i2->curr_bridges--;
+  switch(b->wires){
+    case 1:
+      b->symbol = (b->direction == LEFT || b->direction == RIGHT) ? '-' : '|';
+      break;
+    case 2:
+      b->symbol = (b->direction == LEFT || b->direction == RIGHT) ? '=' : '"';
+      break;
+    default:
+      b->symbol = ' ';
+  }
 }
 
 void heuristics(Puzzle p) { //this function is not updating the islands current->bridge count correctly!
