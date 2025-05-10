@@ -42,17 +42,23 @@ To become an expert at anything, there is a common denominator:
 # Structure of this Repository
 
 There are 3 main features:
-##  Problems
+
 <a id="#orga34978d"></a>
+
+##  Problems
     -   These are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
     -   They let me practice a particular _paradigm_ of problem solving, "Supervised Learning -> SVM", "Unsupervised Learning -> KNN", etc.
-##  Learning
+
 <a id="#orgcfaa906"></a>
+
+##  Learning
     -   This folder contains the code I have written whilst following along with textbooks, open courseware and YouTube playlists. Some notable features are:
         - Andrej Karpathy's entire [Zero to Hero series](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) series.
         - Michael Neilson's book ["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/)
-##  Projects
+
 <a id="#orge067afe"></a>
+
+##  Projects
     -   These are my hard-won pearls.
     -   Difficult (to me) problems that were challenging and instructive to solve. Notable mentions:
         - Peg Solitaire. recursive backtracking, rotation invariant algorithm. <a href="https://abaj.ai/projects/csp/peg-solitaire"><img src="https://abaj.ai/abs_hsv.svg" alt="Peg Solitaire" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>
