@@ -14,8 +14,9 @@
 
 This repo is my 10,000 Hours of Machine Learning.
 
-**IMPORTANT: this repository eventually grew in scope and thus [abaj.ai](https://abaj.ai) was born.
-All of the files in this repository are submodules of that repo, with much of the code being tangled (in the Emacs sense) to the site's origal code blocks.
+*note: this repository grew in size and scope until the singularity event [abaj.ai](https://abaj.ai) <a href="https://abaj.ai/"><img src="https://abaj.ai/abs_hsv.svg" alt="Aayush Bajaj's Augmenting Infrastructure" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>.*
+
+All of the files in this repository are submodules of that site / [monolithic-repo](https://github.com/abaj8494/site), with much of this code being tangled (in the Emacs sense) to the site's originall code blocks.
 
 > "Read 2 papers a week" - Andrew Ng
 
@@ -38,17 +39,19 @@ To become an expert at anything, there is a common denominator:
 
 <a id="org65603ff"></a>
 
-# Structure of the Repository
+# Structure of this Repository
 
 There are 3 main features:
-
+<a id="#orga34978d"></a>
 1.  Problems
     -   These are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
     -   They let me practice a particular _paradigm_ of problem solving, "Supervised Learning -> SVM", "Unsupervised Learning -> KNN", etc.
+<a id="#orgcfaa906"></a>
 2.  Learning
     -   This folder contains the code I have written whilst following along with textbooks, open courseware and YouTube playlists. Some notable features are:
         - Andrej Karpathy's entire [Zero to Hero series](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) series.
         - Michael Neilson's book ["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/)
+<a id="#orge067afe"></a>
 3.  Projects
     -   These are my hard-won pearls.
     -   Difficult (to me) problems that were challenging and instructive to solve. Notable mentions:
