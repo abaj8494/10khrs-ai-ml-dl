@@ -6,7 +6,7 @@
 3.  [Problems](#problems)
 4.  [Learning](#learning)
 5.  [Projects](#projects)
-
+6.  [papers](#papers)
 
 <a id="org6dbe148"></a>
 
@@ -67,7 +67,9 @@ There are 3 main features:
     - Hashiwokakero. reimplemented in Go with a test suite, see the spin-off [repo](https://github.com/abaj8494/hashi)
     - Kits19: Kidney Segmentation using 2 and 3D volumetric data from CT scans. 57th on world [leaderboard](https://kits19.grand-challenge.org/evaluation/965bcad2-cbb9-42a8-8b56-a777c9f165e2/)
 
-# papers
+<a id="#papers"></a>
+
+# papers (hello nerd)
 
 > "Read 2 papers a week" - Andrew Ng
 
