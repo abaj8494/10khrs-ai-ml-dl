@@ -32,12 +32,12 @@ X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_
 # random number generator
 rng = np.random.RandomState(42)
 D = 196883
-W = rng.randn(X.shape[1], D)  # Project from 4D to 196,883D
+W = rng.randn(X.shape[1], D)  # creates random matrix of arg size
 
-def monster_kernel(X1, X2):
-    X1_proj = np.dot(X1, W)
-    X2_proj = np.dot(X2, W)
-    return np.dot(X1_proj, X2_proj.T)
+def monster_kernel(X1, X2): # produces pair-wise combinations of all feature vectors
+    X1_proj = np.dot(X1, W) # projects the 2,3 or 4 features into 198,883
+    X2_proj = np.dot(X2, W) # same here with same result
+    return np.dot(X1_proj, X2_proj.T) # returns the Gram Matrix
 
 # Regularization parameter
 C = 1.0
