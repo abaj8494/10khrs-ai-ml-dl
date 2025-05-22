@@ -2,9 +2,15 @@
 ./comp9417
 ./cuda/
 *.p
+*.pt
 *.pth
 *.pyc
 PROJECTS/ocr/data/
 **/data/
+**/train/
+**/test/
+**/valid/
+**/.ipynb_checkpoints/
  
+*.tar
 *.gz
