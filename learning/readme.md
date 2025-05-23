@@ -24,3 +24,4 @@ As I progress through more Machine Learning, I realise important facts:
 
 1. always split into train, validation and testing. you will need to tune the hyperparameters.
 2. always standardise features before CV (cross validation). check the math, alphas affect coefficients.
+3. `accuracy_score` is only for _classification_ problems, not for _regression_ problems!

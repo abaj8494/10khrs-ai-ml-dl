@@ -68,6 +68,7 @@ Caltech10, Transfer Learning with ResNet: 93%
 FMNIST, Multiclass Classification: 93%. CNN with Batch Norm.
 Ionosphere, MLP, Pytorch implementation: 85.3%. Binary Classification. Xavier, Kaiming inits.
 Titanic, Binary Classification: 82% Decision Trees.
+Life Expectancy (WHO). Regression; 0.29 R2 score. LOOCV experiments.
 
 
 <a id="#learning"></a>
