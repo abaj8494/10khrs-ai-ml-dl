@@ -50,12 +50,12 @@ There are 3 main features:
 -   These are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
 -   They let me practise particular ML algorithms such as SVM's, Logistic Regression, Decision Trees, etc.
 -   The file structure is:
-	- 0. tools
-	- 1. supervised learning
-	- 2. unsupervised learning
-	- 3. transfer learning
-	- 4. deep learning
-	- 5. reinforcement learning
+	- 0.tools
+	- 1.supervised learning
+	- 2.unsupervised learning
+	- 3.transfer learning
+	- 4.deep learning
+	- 5.reinforcement learning
 
 <a id="#scoreboard"></a>
 
