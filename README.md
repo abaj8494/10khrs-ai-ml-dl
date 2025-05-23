@@ -4,6 +4,7 @@
 1.  [Context](#org6dbe148)
 2.  [Structure of the Repository](#org65603ff)
 3.  [Problems](#problems)
+	- [Scoreboard](#scoreboard)
 4.  [Learning](#learning)
 5.  [Projects](#projects)
 6.  [papers](#papers)
@@ -14,7 +15,7 @@
 
 This repo is my 10,000 Hours of Machine Learning.
 
-*note: this repository grew in size and scope until the singularity event [abaj.ai](https://abaj.ai) <a href="https://abaj.ai/"><img src="https://abaj.ai/abs_hsv.svg" alt="Aayush Bajaj's Augmenting Infrastructure" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>.*
+*this repository grew in size and scope until the singularity event [abaj.ai](https://abaj.ai) <a href="https://abaj.ai/"><img src="https://abaj.ai/abs_hsv.svg" alt="Aayush Bajaj's Augmenting Infrastructure" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>.*
 
 All of the files in this repository are submodules of that site / [monolithic-repo](https://github.com/abaj8494/site), with much of this code being tangled (in the Emacs sense) to the site's originall code blocks.
 
@@ -47,7 +48,27 @@ There are 3 main features:
 ##  Problems
 
 -   These are solutions to **classical** problems, MNIST, Boston Housing, XOR, etc.
--   They let me practice a particular _paradigm_ of problem solving, "Supervised Learning -> SVM", "Unsupervised Learning -> KNN", etc.
+-   They let me practise particular ML algorithms such as SVM's, Logistic Regression, Decision Trees, etc.
+-   The file structure is:
+	- 0. tools
+	- 1. supervised learning
+	- 2. unsupervised learning
+	- 3. transfer learning
+	- 4. deep learning
+	- 5. reinforcement learning
+
+<a id="#scoreboard"></a>
+
+### Scoreboard
+
+MNIST, Multiclass Classification: 99.6%, CNN with Regularisation
+Pima Indians, Binary Classification: 85%, Decision Trees
+Cifar10, Multiclass Classification: 3-layer CNN: 55%
+Caltech10, Transfer Learning with ResNet: 93%
+FMNIST, Multiclass Classification: 93%. CNN with Batch Norm.
+Ionosphere, MLP, Pytorch implementation: 85.3%. Binary Classification. Xavier, Kaiming inits.
+Titanic, Binary Classification: 82% Decision Trees.
+
 
 <a id="#learning"></a>
 
