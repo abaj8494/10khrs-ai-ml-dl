@@ -61,14 +61,14 @@ There are 3 main features:
 
 ### Scoreboard
 
-MNIST, Multiclass Classification: 99.6%, CNN with Regularisation
-Pima Indians, Binary Classification: 85%, Decision Trees
-Cifar10, Multiclass Classification: 3-layer CNN: 55%
-Caltech10, Transfer Learning with ResNet: 93%
-FMNIST, Multiclass Classification: 93%. CNN with Batch Norm.
-Ionosphere, MLP, Pytorch implementation: 85.3%. Binary Classification. Xavier, Kaiming inits.
-Titanic, Binary Classification: 82% Decision Trees.
-Life Expectancy (WHO). Regression; 0.29 R2 score. LOOCV experiments.
+- MNIST, Multiclass Classification: 99.6%, CNN with Regularisation
+- Pima Indians, Binary Classification: 85%, Decision Trees
+- Cifar10, Multiclass Classification: 3-layer CNN: 55%
+- Caltech10, Transfer Learning with ResNet: 93%
+- FMNIST, Multiclass Classification: 93%. CNN with Batch Norm.
+- Ionosphere, MLP, Pytorch implementation: 85.3%. Binary Classification. Xavier, Kaiming inits.
+- Titanic, Binary Classification: 82% Decision Trees.
+- Life Expectancy (WHO). Regression; 0.29 R2 score. LOOCV experiments.
 
 
 <a id="#learning"></a>
