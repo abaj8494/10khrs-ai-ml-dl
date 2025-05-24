@@ -69,6 +69,7 @@ There are 3 main features:
 - Ionosphere, MLP, Pytorch implementation: 85.3%. Binary Classification. Xavier, Kaiming inits.
 - Titanic, Binary Classification: 82% Decision Trees.
 - Life Expectancy (WHO). Regression; 0.29 R2 score. LOOCV experiments.
+- Wine Multiclass Classif: 0.981481: RandomForest and Linear SVM. Confusion Matrix, AdaBoost, LogReg, DT.
 
 
 <a id="#learning"></a>
