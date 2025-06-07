@@ -15,7 +15,7 @@
 
 This repo is my 10,000 Hours of Machine Learning.
 
-<iframe src="https://norvig.com/21-days.html"></iframe>
+[Peter Norvig's Post]("https://norvig.com/21-days.html")<a href="https://norvig.com/21-days.html"><img src="img/rat.png" alt="Auguste Gusteau" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>
 
 *Note: this repository grew in size and scope until the singularity event [abaj.ai](https://abaj.ai) <a href="https://abaj.ai/"><img src="https://abaj.ai/abs_hsv.svg" alt="Aayush Bajaj's Augmenting Infrastructure" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>.*
 
