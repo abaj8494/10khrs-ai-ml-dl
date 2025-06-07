@@ -15,7 +15,9 @@
 
 This repo is my 10,000 Hours of Machine Learning.
 
-*this repository grew in size and scope until the singularity event [abaj.ai](https://abaj.ai) <a href="https://abaj.ai/"><img src="https://abaj.ai/abs_hsv.svg" alt="Aayush Bajaj's Augmenting Infrastructure" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>.*
+<iframe src="https://norvig.com/21-days.html"></iframe>
+
+*Note: this repository grew in size and scope until the singularity event [abaj.ai](https://abaj.ai) <a href="https://abaj.ai/"><img src="https://abaj.ai/abs_hsv.svg" alt="Aayush Bajaj's Augmenting Infrastructure" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>.*
 
 All of the files in this repository are submodules of that site / [monolithic-repo](https://github.com/abaj8494/site), with much of this code being tangled (in the Emacs sense) to the site's originall code blocks.
 
