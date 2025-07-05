@@ -15,11 +15,11 @@
 
 This repo is my 10,000 Hours of Machine Learning.
 
-[Peter Norvig's Post]("https://norvig.com/21-days.html")<a href="https://norvig.com/21-days.html"><img src="img/rat.png" alt="Auguste Gusteau" style="vertical-align: text-bottom; width: 22px; height: auto;"></a>
+[Peter Norvig's Post](https://norvig.com/21-days.html)<a href="https://norvig.com/21-days.html"><img src="img/rat.png" alt="Auguste Gusteau" style="vertical-align: text-bottom; width: 22px; height: auto;"></a>
 
 *Note: this repository grew in size and scope until the singularity event [abaj.ai](https://abaj.ai) <a href="https://abaj.ai/"><img src="https://abaj.ai/abs_hsv.svg" alt="Aayush Bajaj's Augmenting Infrastructure" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>.*
 
-All of the files in this repository are submodules of that site / [monolithic-repo](https://github.com/abaj8494/site), with much of this code being tangled (in the Emacs sense) to the site's originall code blocks.
+All of the files in this repository are submodules of that site / [monolithic-repo](https://github.com/abaj8494/site), with much of this code being tangled (in the Emacs sense) to the site's original code blocks.
 
 
 > "Machine Learning is just lego for adults" - Dr. Kieran Samuel Owens
@@ -81,20 +81,26 @@ There are 3 main features:
 -   This folder contains the code I have written whilst following along with textbooks, open courseware and YouTube playlists. Some notable features are:
     - Andrej Karpathy's entire [Zero to Hero series](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) series.
     - Michael Neilson's book ["Neural Networks and Deep Learning"](http://neuralnetworksanddeeplearning.com/)
+    - d2l by [fast ai](https://fast.ai)
 
 <a id="#projects"></a>
 
 ##  Projects
 
--   These are my hard-won pearls.
--   Difficult (to me) problems that were challenging and instructive to solve. Notable mentions:
+-   These are my non-trivial, novel pearls.
+-   These projects are unique and were challenging / instructive to solve:
     - Peg Solitaire. recursive backtracking, rotation invariant algorithm. <a href="https://abaj.ai/projects/csp/peg-solitaire"><img src="https://abaj.ai/abs_hsv.svg" alt="Peg Solitaire" style="vertical-align: text-bottom; width: 16px; height: auto;"></a>
     - Hashiwokakero. reimplemented in Go with a test suite, see the spin-off [repo](https://github.com/abaj8494/hashi)
     - Kits19: Kidney Segmentation using 2 and 3D volumetric data from CT scans. 57th on world [leaderboard](https://kits19.grand-challenge.org/evaluation/965bcad2-cbb9-42a8-8b56-a777c9f165e2/)
+    - OCR K-means _parallelised_
+    - SVM with Monster (group theory dimension); no real benefit other than novelty
+    - similarly, `erf-function` as a _loss_ function 😹
+    - interview prep..
+
 
 <a id="#papers"></a>
 
-# papers (hello nerd)
+# papers
 
 > "Read 2 papers a week" - Andrew Ng
 
