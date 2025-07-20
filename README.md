@@ -78,7 +78,7 @@ There are 3 main features:
 <a name="learning"></a>
 
 <details>
-<summary><h2>Problems</h2></summary>
+<summary><h2>Learning</h2></summary>
 
 -   This folder contains the code I have written whilst following along with textbooks, open courseware and YouTube playlists. Some notable features are:
     - Andrej Karpathy's entire [Zero to Hero series](https://www.youtube.com/playlist?list=PLAqhIrjkxbuWI23v9cThsA9GvCAUhRvKZ) series.
